@@ -6,15 +6,13 @@ import org.springframework.stereotype.Service
 
 
 @Service
-class HAProxyService(val consul: ConsulConnection) {
+class HAProxyService(consul: ConsulConnection) {
 
-    val dataProvider: HAProxyConnection
+    private final val dataProvider: HAProxyConnection = HAProxyConnection(url = consul.url, userName = consul.username, password = consul.password)
 
     init {
-        dataProvider = HAProxyConnection(url = consul.url, userName = consul.username, password = consul.password)
         dataProvider.initAuth()
     }
-
 
     fun getStats(): List<HAService> {
         return dataProvider.readHaProxy()

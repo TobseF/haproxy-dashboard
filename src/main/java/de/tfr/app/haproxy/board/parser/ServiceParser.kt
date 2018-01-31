@@ -16,8 +16,9 @@ fun parseStatus(input: String): Status {
     return when (input) {
         "OPEN" -> Status.Open
         "UP" -> Status.Up
+        "DOWN" -> Status.Down
         "no check" -> Status.NoCheck
-        else -> Status.Unkown
+        else -> Status.Unknown
     }
 
 }
