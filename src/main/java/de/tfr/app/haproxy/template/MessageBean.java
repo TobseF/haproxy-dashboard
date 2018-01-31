@@ -33,7 +33,7 @@ public class MessageBean {
      * @return a message
      */
     public String getMessage() {
-        return "World!";
+        return "";
     }
 
 }

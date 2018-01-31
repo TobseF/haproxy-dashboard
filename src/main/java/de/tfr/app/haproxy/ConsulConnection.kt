@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 @ConfigurationProperties(prefix = "consul.connection")
-class ConsulConnection {
+open class ConsulConnection {
     lateinit var password: String
     lateinit var username: String
     lateinit var url: String
